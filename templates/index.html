@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Irrigation & Crop Health Prediction</title>
+    <style>
+        body {
+            background-image: url('/static/images/nsu.jpg');
+
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #c7bef7;
+            text-align: center;
+            padding: 20px;
+        }
+        form {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        label, input, select, button {
+            display: block;
+            margin: 10px auto;
+            width: 80%;
+            max-width: 300px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: #744646;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter Field Data for prediction </h2>
+    <form action="/predict" method="post">
+        <label>Temperature (°C):</label>
+        <input type="text" name="temperature" required>
+
+        <label>Humidity (%):</label>
+        <input type="text" name="humidity" required>
+
+        <label>Soil Moisture (%):</label>
+        <input type="text" name="soil_moisture" required>
+
+        <label>Rainfall (mm):</label>
+        <input type="text" name="rainfall" required>
+
+        <label>Crop Type:</label>
+        <select name="crop_type">
+            <option value="Wheat">Wheat</option>
+            <option value="Rice">Rice</option>
+            <option value="Corn">Corn</option>
+            <option value="Soybean">Soybean</option>
+            <option value="Cotton">Cotton</option>
+        </select>
+
+        <button type="submit">Predict</button>
+    </form>
+    <footer>Developed by Rabby</footer>
+</body>
+</html>
